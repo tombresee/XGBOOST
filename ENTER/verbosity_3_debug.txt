@@ -1,0 +1,455 @@
+
+xg_model = XGBClassifier(random_state=42,
+                         verbosity = 3, 
+                         use_label_encoder=True)
+
+
+DEBUG: ..\src\gbm\gbtree.cc:155: Using tree method: 2
+
+ INFO:  tree pruning end, 68 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 122 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 114 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+
+ WARNING:  Starting in XGBoost 1.3.0, the default evaluation 
+           metric used with the objective 'multi:softprob' 
+           was changed from 'merror' to 'mlogloss'. Explicitly 
+           set eval_metric if you'd like to restore the 
+           old behavior.
+
+ INFO:  tree pruning end, 76 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 118 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 102 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 98 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 116 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 122 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 116 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 92 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 114 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 98 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 122 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 116 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 120 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 108 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 108 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 102 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 116 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 106 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 108 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 106 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 106 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 108 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 114 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 114 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 120 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 116 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 92 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 92 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 106 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 106 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 60 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 74 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 114 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 122 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 62 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 70 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 92 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 114 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 56 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 64 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 102 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 118 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 122 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 46 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 68 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 106 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 114 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 32 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 108 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 74 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 68 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 108 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 24 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 98 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 16 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 66 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 26 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 98 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 48 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 118 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 106 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 74 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 16 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 92 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 68 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 40 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 122 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 60 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 74 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 70 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 50 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 70 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 106 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 102 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 60 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 74 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 68 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 56 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 46 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 50 extra nodes,  0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 18 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 114 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 16 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 50 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 108 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 48 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 46 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 32 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 40 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 48 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 38 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 70 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 38 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 34 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 64 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 56 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 30 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 38 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 126 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 36 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 64 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 30 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 40 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 66 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 58 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 66 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 54 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 44 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 26 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 64 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 62 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 18 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 114 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 74 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 56 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 102 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 102 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 110 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 70 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 62 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 52 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 94 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 18 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 74 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 42 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 32 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 40 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 34 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 50 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 54 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 64 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 34 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 108 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 62 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 98 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 68 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 52 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 52 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 44 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 118 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 68 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 28 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 64 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 100 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 52 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 52 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 32 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 44 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 40 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 54 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 64 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 44 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 108 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 48 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 20 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 50 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 50 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 102 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 92 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 36 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 48 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 44 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 64 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 62 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 26 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 24 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 32 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 40 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 96 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 56 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 62 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 78 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 60 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 46 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 62 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 68 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 98 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 22 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 22 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 50 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 32 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 76 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 32 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 92 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 112 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 38 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 80 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 88 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 90 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 30 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 106 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 36 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 44 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 82 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 22 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 62 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 104 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 22 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 16 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 98 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 36 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 24 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 20 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 86 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 32 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 72 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 26 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 84 extra nodes, 0 pruned nodes, max_depth=6
+ INFO:  tree pruning end, 28 extra nodes, 0 pruned nodes, max_depth=6
+
+
+ ======== Monitor: Learner ========
+
+ Configure: 0s, 1 calls @ 0us
+
+ EvalOneIter: 0.000952s, 100 calls @ 952us
+
+ GetGradient: 0.286192s, 100 calls @ 286192us
+
+ PredictRaw: 0.215377s, 100 calls @ 215377us
+
+ UpdateOneIter: 6.69785s, 100 calls @ 6697852us
+
+
+ ======== Monitor: GBTree ========
+
+ BoostNewTrees: 6.27369s, 100 calls @ 6273685us
+
+ CommitModel: 7.5e-05s, 100 calls @ 75us
+
+
+ ======== Monitor: TreePruner ========
+
+ PrunerUpdate: 0.217467s, 400 calls @ 217467us
+
+
+
+XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+              colsample_bynode=1, colsample_bytree=1, gamma=0, gpu_id=-1,
+              importance_type='gain', interaction_constraints='',
+              learning_rate=0.300000012, max_delta_step=0, max_depth=6,
+              min_child_weight=1, missing=nan, monotone_constraints='()',
+              n_estimators=100, n_jobs=24, num_parallel_tree=1,
+              objective='multi:softprob', random_state=42, reg_alpha=0,
+              reg_lambda=1, scale_pos_weight=None, subsample=1,
+              tree_method='exact', validate_parameters=1, verbosity=3)
+
+
+
