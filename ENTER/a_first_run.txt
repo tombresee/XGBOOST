@@ -3,8 +3,15 @@
 # Author:  Tom Bresee
 # Mark I
 #
+# Note:  i set verbosity = 3 !  (i want everything)
+# 
+# Comments:
+#  - see how the default max_depths is 6 ?  We can lower that to potentially
+#    lower prob of overfitting, that will be next 
 #
-# i set verbosity = 3 !   (i want everything)
+#  - holy moly XGBOOST compiles fast, great alg design...
+#
+
 
 
 [19:31:20] DEBUG: ../src/gbm/gbtree.cc:154: Using tree method: 2
@@ -420,13 +427,16 @@
 
 [19:31:48] UpdateOneIter: 27.2884s, 100 calls @ 27288449us
 
+
 [19:31:48] ======== Monitor: GBTree ========
 [19:31:48] BoostNewTrees: 26.2999s, 100 calls @ 26299867us
 
 [19:31:48] CommitModel: 0.000255s, 100 calls @ 255us
 
+
 [19:31:48] ======== Monitor: TreePruner ========
 [19:31:48] PrunerUpdate: 0.263778s, 400 calls @ 263778us
+
 
 XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
               colsample_bynode=1, colsample_bytree=1, gamma=0, gpu_id=-1,
