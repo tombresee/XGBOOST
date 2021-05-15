@@ -1,4 +1,9 @@
 
+#
+# Author:  Tom Bresee
+# Mark I
+#
+#
 # i set verbosity = 3 !   (i want everything)
 
 
