@@ -1,0 +1,219 @@
+#-----------------------------------------------------------------------------------------------------
+# Author:  Tom Bresee
+# Kaggle:  Tabular Data May 2021
+#-----------------------------------------------------------------------------------------------------
+# import os
+# for dirname, _, filenames in os.walk('/kaggle/input'):
+#     for filename in filenames:
+#         print(os.path.join(dirname, filename))
+#
+#   output of above code would be:
+#    /kaggle/input/tabular-playground-series-may-2021/sample_submission.csv
+#    /kaggle/input/tabular-playground-series-may-2021/train.csv
+#    /kaggle/input/tabular-playground-series-may-2021/test.csv
+#-----------------------------------------------------------------------------------------------------
+import warnings
+warnings.filterwarnings("ignore")
+#-----------------------------------------------------------------------------------------------------
+from IPython.display import HTML
+#-----------------------------------------------------------------------------------------------------
+# --- main libraries --- 
+import numpy as np
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+import graphviz
+import altair as alt
+import plotly.express as px
+#-----------------------------------------------------------------------------------------------------
+# --- scientific stuff ---
+import scipy.sparse
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import GridSearchCV # probably won't use
+from sklearn.metrics import mean_squared_error, accuracy_score
+from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.metrics import accuracy_score, plot_confusion_matrix
+#-----------------------------------------------------------------------------------------------------
+# --- main ML algorithm ---
+import xgboost as xgb
+# from xgboost import XGBClassifier 
+# from xgboost import plot_importance
+#-----------------------------------------------------------------------------------------------------
+import pickle
+#-----------------------------------------------------------------------------------------------------
+# --- i may use gridsearch or do more complicated optuna ---
+import lightgbm as lgb
+import optuna.integration.lightgbm as lgb
+#-----------------------------------------------------------------------------------------------------
+# --- read in files and process --- 
+# a. I will specify the files to read in 
+#    I also can say i don't need that 'id' column, its superficial
+sample_sub = pd.read_csv("/kaggle/input/tabular-playground-series-may-2021/sample_submission.csv")
+train_df   = pd.read_csv("/kaggle/input/tabular-playground-series-may-2021/train.csv")
+#    later i will find i need to do this
+# train_df['target'] = train_df['target'].map({'Class_1':1, 'Class_2':2, 'Class_3':3, 'Class_4':4})
+#    I think this looks better: 
+train_df.rename(columns = lambda x: x.replace('_', ' '), inplace=True) 
+test_df    = pd.read_csv("/kaggle/input/tabular-playground-series-may-2021/test.csv")
+#-----------------------------------------------------------------------------------------------------
+# b.  clean and make ready input
+# X_train = train_df.copy()
+# remove the id and target col obviously
+# X_train.drop(columns=["id", "target"], inplace=True)
+# y_train = train_df.copy()
+# y_train = y_train['target']
+#     consolidate and remove the id and target at the same time
+X_train, X_val, y_train, y_val = train_test_split(
+    train_df.drop(columns=["id","target"]), 
+    train_df.target, 
+    test_size=0.1,
+    random_state = 42,
+    stratify=train_df.target)
+X_test=test_df.drop(columns="id")
+#-----------------------------------------------------------------------------------------------------
+# appendix. random notes / stuff 
+# # type(bst)  # xgboost.sklearn.XGBClassifier < -  
+# fix: 
+# xgb.plot_tree(bst, num_trees=2)
+# fig = matplotlib.pyplot.gcf()
+# # fig.set_size_inches(150, 100)
+# fig.set_size_inches(180.5, 16.5)
+# plt.show()
+# # fig.savefig('tree.svg')
+# --- creating example table for clarity --- 
+# print = pd.DataFrame({'Data': ['100,000',  '50', 'int64', '0','4']})
+# print.index=['Total Rows of Data', 
+#              'Number of Features', 
+#              'Features Dtype', 
+#              'Num Missing Values',
+#              'Number of target classes']
+# print.to_html()
+#-----------------------------------------------------------------------------------------------------
+
+
+#-----------------------------------------------------------------------------------------------------
+# --- some css level stuff below ----
+
+%%HTML
+<style type="text/css">
+     
+
+div.h2 {
+  background-color: #159957;
+  background-image: linear-gradient(120deg, #155799, #159957);
+  text-align: left;
+  color: white;              
+  padding:9px;
+  padding-right: 100px; 
+  font-size: 20px; 
+  max-width: 1500px; 
+  margin: auto; 
+  margin-top: 40px;}
+                                     
+                                      
+body {font-size: 12px;}    
+     
+                                                                     
+div.h3 {
+    color: #159957; 
+    font-size: 18px; 
+    margin-top: 20px; 
+    margin-bottom:4px;
+       }
+   
+                                      
+div.h4 {
+    color: #159957;
+    font-size: 15px; 
+    margin-top: 20px; 
+    margin-bottom: 8px;
+}
+   
+                                      
+span.note {
+    font-size: 5; 
+    color: gray; 
+    font-style: italic;
+}
+  
+                                      
+hr {display: block; 
+    color: gray
+    height: 1px; 
+    border: 0; 
+    border-top: 1px solid;}
+  
+                                      
+hr.light {display: block; 
+          color: lightgray
+          height: 1px; 
+          border: 0; 
+          border-top: 1px solid;}   
+    
+                                      
+table.dataframe th 
+{
+    border: 1px darkgray solid;
+    color: black;
+      <table align="left">
+    ...
+  </table>
+    background-color: white;
+}
+    
+                                      
+table.dataframe td 
+{
+    border: 1px darkgray solid;
+    color: black;
+    background-color: white;
+    font-size: 11px;
+    text-align: center;
+} 
+   
+                                            
+table.rules th 
+{
+    border: 1px darkgray solid;
+    color: black;
+    background-color: white;
+    font-size: 11px;
+    align: left;
+}
+       
+                                      
+table.rules td 
+{
+    border: 1px darkgray solid;
+    color: black;
+    background-color: white;
+    font-size: 13px;
+    text-align: center;
+} 
+   
+                                                                          
+table.rules tr.best
+{
+    color: green;
+}    
+    
+                                      
+.output { 
+    align-items: left; 
+}
+        
+                                      
+.output_png {
+    display: table-cell;
+    text-align: left;
+    margin:auto;
+}                                          
+                                                                    
+                                                                     
+</style>  
+#-----------------------------------------------------------------------------------------------------
+
