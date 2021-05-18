@@ -1,0 +1,73 @@
+# this line is very important
+train_df['target'] = train_df['target'].map({'Class_1':1, 'Class_2':2, 'Class_3':3, 'Class_4':4})
+temp = train_df.copy()
+temp.drop(['id','target'], inplace=True, axis=1)
+import pandas as pd
+pd.set_option('display.max_rows', None)
+sns.set_style("ticks", {'grid.linestyle': '--'})
+
+flierprops = dict(markerfacecolor='0.2', 
+                  markersize=10,
+                  linestyle='none')
+
+fig, ax = plt.subplots(figsize=(12,15))
+
+ax.set_ylim(-7, 22)
+
+ax.set_title('\nAll 50 Features:  Training Value Distribution\n', fontsize=11, loc='left')
+
+# sns.boxplot(y='DefensePersonnel',
+#             x='Yards',
+#             data=dff,
+#             ax=ax,
+#             showfliers=False , 
+#             #color='blue'
+#             )
+
+# sns.boxplot(y=dff['personnelD'].sort_values(ascending=False),
+#             x=dff['offensePlayResult'],
+#             ax=ax,
+#             showfliers=False ,
+#             linewidth=.8
+#             #color='blue'
+#             )
+
+sns.boxplot(data=temp, 
+            orient="h",
+            ax=ax,
+            showfliers=True,
+            fliersize=.5,
+            linewidth=.8
+            #color='blue'
+            )
+
+# ax.yaxis.grid(False)   # Show the horizontal gridlines
+# ax.xaxis.grid(True)  # Hide x-axis gridlines 
+ax.xaxis.set_major_locator(plt.MultipleLocator(10))
+
+# Add transparency to colors
+for patch in ax.artists:
+  r, g, b, a = patch.get_facecolor()
+  patch.set_facecolor((r, g, b, .3))
+    
+# ax.set(xlabel=''common xlabel', ylabel='common ylabel', title='some title')
+ax.set(xlabel="\nValue Distribution\n")
+
+sns.despine(top=True, right=True, left=True, bottom=True)
+
+ax.xaxis.set_ticks_position('none') 
+
+ax.set_ylabel('')
+
+#-----more control-----#
+ax.grid(linestyle='--', 
+        linewidth='0.3', 
+        color='lightgray', 
+        alpha=0.8,
+        axis='x'
+       )
+
+plt.xlim(-10, 70)
+plt.axvline(0, 0,1, linewidth=.5, color="black", linestyle="--")
+plt.tight_layout()
+plt.show();
