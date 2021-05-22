@@ -1,7 +1,9 @@
+
 #-----------------------------------------------------------------------------------------------------
 # Author:  Tom Bresee
-# Kaggle:  Tabular Data May 2021 v5.19
+# Kaggle:  Tabular Data May 2021 v5.21
 #-----------------------------------------------------------------------------------------------------
+#
 # import os
 # for dirname, _, filenames in os.walk('/kaggle/input'):
 #     for filename in filenames:
@@ -11,13 +13,14 @@
 #    /kaggle/input/tabular-playground-series-may-2021/sample_submission.csv
 #    /kaggle/input/tabular-playground-series-may-2021/train.csv
 #    /kaggle/input/tabular-playground-series-may-2021/test.csv
+# 
 #-----------------------------------------------------------------------------------------------------
 import warnings
 warnings.filterwarnings("ignore")
 #-----------------------------------------------------------------------------------------------------
 from IPython.display import HTML
 #-----------------------------------------------------------------------------------------------------
-# --- main libraries --- 
+# --- common standard libraries ---
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -44,6 +47,10 @@ from sklearn.metrics import classification_report
 import xgboost as xgb
 # from xgboost import XGBClassifier 
 # from xgboost import plot_importance, plot_tree
+# i import entirely library, I actually prefer to 
+# use xgb.<something>, in case someone thinks for
+# instance plot_tree is something from sklearn
+# or matplotlib or altair or whatever...
 #-----------------------------------------------------------------------------------------------------
 import pickle
 #-----------------------------------------------------------------------------------------------------
@@ -53,11 +60,12 @@ import optuna.integration.lightgbm as lgb
 #-----------------------------------------------------------------------------------------------------
 # --- read in files and process --- 
 # a. I will specify the files to read in 
-#    I also can say i don't need that 'id' column, its superficial
+#    I also can say i don't need that 'id' column, its superficial, 
+#    i.e. it brings no real 'information' to the table...
 sample_sub = pd.read_csv("/kaggle/input/tabular-playground-series-may-2021/sample_submission.csv")
 train_df   = pd.read_csv("/kaggle/input/tabular-playground-series-may-2021/train.csv")
 #    later i will find i need to do this
-# train_df['target'] = train_df['target'].map({'Class_1':1, 'Class_2':2, 'Class_3':3, 'Class_4':4})
+# train_df['target'] = train_df['target'].map({'Class_1':0, 'Class_2':1, 'Class_3':2, 'Class_4':3})
 #    I think this looks better: 
 train_df.rename(columns = lambda x: x.replace('_', ' '), inplace=True) 
 test_df    = pd.read_csv("/kaggle/input/tabular-playground-series-may-2021/test.csv")
@@ -96,23 +104,28 @@ X_test=test_df.drop(columns="id")
 #              'Number of target classes']
 # print.to_html()
 #
-# utility for download hi-rez image
-#   import os
-#   os.chdir(r'/kaggle/working')
-#   from IPython.display import FileLink 
-#   FileLink(r'closeup_histogram.svg')
-# 
-# ref: 
-#  replacing:
+# --- utility for download hi-rez images ---
+def download_my_file(my_file):
+    import os 
+    os.chdir(r'/kaggle/working')
+    from IPython.display import FileLink 
+    FileLink(r'my_file')
+#
+# --- replacing ---
 #    y.replace({1:0, 2:1, 3:2, 4:3, 5:4}, inplace = True)
+#-----------------------------------------------------------------------------------------------------
+# --- download latest xgboost ---
+# !pip install xgboost --upgrade 
+# print("xgb version: {}". format(xgb.__version__))
 #-----------------------------------------------------------------------------------------------------
 
 
 
+# --- some css stuff ---
 %%HTML
+
 <style type="text/css">
      
-
 div.h2 {
   background-color: #159957;
   background-image: linear-gradient(120deg, #155799, #159957);
@@ -126,7 +139,7 @@ div.h2 {
   margin-top: 40px;}
                                      
                                       
-body {font-size: 12px;}    
+body {font-size: 11px;}    
      
                                                                      
 div.h3 {
@@ -218,3 +231,9 @@ table.rules tr.best
 }                                          
                                                                                                                                
 </style>  
+
+#
+# --- to make something a way ---
+#   <div class="body">  Tom is cool  </div>
+# 
+
