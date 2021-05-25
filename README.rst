@@ -10,8 +10,7 @@ XGBOOST Deep Dive
 
 :Authors: Tom Bresee
 :Version: 1.2
-:Purpose: Experimental Design and Analysis
-:Course:  SIADS 631
+:Purpose: Kaggle Competition
 
 
 |
